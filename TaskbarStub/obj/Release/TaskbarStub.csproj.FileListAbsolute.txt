@@ -1,0 +1,44 @@
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\bin\Release\TaskbarStub.exe.config
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\bin\Release\TaskbarStub.exe
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\bin\Release\TaskbarStub.pdb
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub.csprojResolveAssemblyReference.cache
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\TaskbarStub\obj\Release\MainWindow.g.cs
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\TaskbarStub\obj\Release\App.g.cs
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub_MarkupCompile.cache
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub_MarkupCompile.lref
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\TaskbarStub\obj\Release\MainWindow.baml
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub.g.resources
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub.Properties.Resources.resources
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub.csproj.GenerateResource.Cache
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub.exe
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub.pdb
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\TaskbarStub.exe.config
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\TaskbarStub.exe
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\TaskbarStub.pdb
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\TaskbarStub\obj\Release\MainWindow.g.cs
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\TaskbarStub\obj\Release\App.g.cs
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub_MarkupCompile.cache
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub_MarkupCompile.lref
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\TaskbarStub\obj\Release\MainWindow.baml
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub.g.resources
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub.Properties.Resources.resources
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub.csproj.GenerateResource.Cache
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub.exe
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub.pdb
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\TaskbarStub.exe.CodeAnalysisLog.xml
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\TaskbarStub.exe.lastcodeanalysissucceeded
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\TaskbarStub.exe.config
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\TaskbarStub.exe
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\TaskbarStub.pdb
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub.csprojResolveAssemblyReference.cache
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\TaskbarStub\obj\Release\MainWindow.g.cs
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\TaskbarStub\obj\Release\App.g.cs
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub_MarkupCompile.cache
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub_MarkupCompile.lref
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\TaskbarStub\obj\Release\MainWindow.baml
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub.g.resources
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub.Properties.Resources.resources
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub.csproj.GenerateResource.cache
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub.csproj.CoreCompileInputs.cache
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub.exe
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\TaskbarStub\obj\Release\TaskbarStub.pdb

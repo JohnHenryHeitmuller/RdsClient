@@ -1,0 +1,12 @@
+﻿<Window x:Class="RdsClient.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RdsClient"
+        mc:Ignorable="d"
+        Title="RDS CLient" Height="400" Width="600" Icon="Bokehlicia-Captiva-Rocket-Squared.ico" ShowInTaskbar="False" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+    <Grid Background="#FFE5E5E5">
+        <Label x:Name="label" Content="Under Construction" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Height="50" Width="240" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontWeight="Bold"/>
+    </Grid>
+</Window>

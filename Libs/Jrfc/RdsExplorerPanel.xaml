@@ -1,0 +1,201 @@
+﻿<UserControl x:Name="uc_RdsExplorerPanel" x:Class="Jrfc.RdsExplorerPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Jrfc"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="600" Loaded="uc_RdsExplorerPanel_Loaded">
+
+    <UserControl.Resources>
+        <ContextMenu x:Key="uc_RdsExplorerPanel_ContextMenu" x:Shared="true">
+            <!-- Built dynamically in event handler
+                 uc_RdsExplorerPanel_ContextMenu_Opening()
+            -->
+            <!--
+            <ContextMenu.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="RdsExplorerPanel_ContextMenu_Header" />
+                        <TextBlock Name="RdsExplorerPanel_ContextMenu_PinSymbol" />
+                    </StackPanel>
+                </DataTemplate>
+            </ContextMenu.ItemTemplate>
+            -->
+        </ContextMenu>
+
+        <Style x:Key="RdsExplorerPanel_DisabledApp_Label" TargetType="TextBlock">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding AvailableFromServer}" Value="False">
+                    <Setter Property="Foreground" Value="DarkGray"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="RdsExplorerPanel_DisabledApp_IconImage" TargetType="Image">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding AvailableFromServer}" Value="False">
+                    <Setter Property="Opacity" Value=".2" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="RdsExplorerPanel_DisabledApp_IconText" TargetType="TextBlock">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding AvailableFromServer}" Value="True">
+                    <Setter Property="Text" Value=""/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding AvailableFromServer}" Value="False">
+                    <Setter Property="Text" Value="Offline"/>
+                    <!-- <Setter Property="Background" Value="White"/> -->
+                    <Setter Property="Foreground" Value="Red"/>
+                    <Setter Property="FontWeight" Value="Normal" />
+                    <Setter Property="FontSize" Value="16" />
+                    <Setter Property="Opacity" Value=".7" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="RdsExplorerPanel_Server_IPAddress" TargetType="TextBlock">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Path=Items[0].ServerIP4AddressAsString}" Value="">
+                    <Setter Property="Text" Value="[DNS: Server not found]"/>
+                    <!-- <Setter Property="Background" Value="White"/> -->
+                    <Setter Property="Foreground" Value="OrangeRed"/>
+                    <Setter Property="FontWeight" Value="Bold" />
+                    <Setter Property="FontSize" Value="16" />
+                    <Setter Property="Opacity" Value=".7" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="RdsExplorerPanel_DisabledApp_ServerNotDefinedInRegistry" TargetType="TextBlock">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Path=Items[0].IsServerConnectionDefinedInLocalRegistry}" Value="True">
+                    <Setter Property="Text" Value=""/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=Items[0].IsServerConnectionDefinedInLocalRegistry}" Value="False">
+                    <Setter Property="Text" Value="[Server registry keys missing]"/>
+                    <!-- <Setter Property="Background" Value="White"/> -->
+                    <Setter Property="Foreground" Value="OrangeRed"/>
+                    <Setter Property="FontWeight" Value="Bold" />
+                    <Setter Property="FontSize" Value="16" />
+                    <Setter Property="Opacity" Value=".7" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <ListView x:Name="uc_RdsExplorerPanel_ListView" 
+                  Margin="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  ContextMenu="{DynamicResource uc_RdsExplorerPanel_ContextMenu}" 
+                  ContextMenuOpening="uc_RdsExplorerPanel_ContextMenu_Opening" 
+                  MouseDoubleClick="uc_RdsExplorerPanel_ListView_MouseDoubleClick" BorderThickness="0" >
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="0,0,0,0" Width="80" Height="80" MouseEnter="uc_RdsExplorerPanel_ListView_Item_MouseEnter">
+                        <Grid>
+                            <Image Source="{Binding CachedIconFile}" 
+                                   Style="{StaticResource RdsExplorerPanel_DisabledApp_IconImage}" 
+                                   IsEnabled="{Binding AvailableFromServer}"
+                                   HorizontalAlignment="Center" VerticalAlignment="Top" Height="32" Width="80" Margin="0 0 0 0"/>
+                            <TextBlock Style="{StaticResource RdsExplorerPanel_DisabledApp_IconText}" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Top" Width="80"/>
+                        </Grid>
+                        <TextBlock Text="{Binding DisplayName}" Style="{StaticResource RdsExplorerPanel_DisabledApp_Label}" 
+                                   IsEnabled="{Binding AvailableFromServer}" 
+                                   HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Width="80" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.ContainerStyle>
+                        <Style TargetType="{x:Type GroupItem}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <Expander Name="uc_RdsExplorerPanel_ServerGroupExpander" Margin="0" VerticalAlignment="Center"
+                                                  Expanded="uc_RdsExplorerPanel_ServerGroupExpander_Expanded" 
+                                                  Collapsed="uc_RdsExplorerPanel_ServerGroupExpander_Collapsed" 
+                                                  Loaded="uc_RdsExplorerPanel_ServerGroupExpander_Loaded">
+                                            <Expander.Header>
+                                                <StackPanel x:Name="uc_RdsExplorerPanel_ServerGroupStackPanel" Orientation="Horizontal" Margin="0,0,0,0" >
+                                                    <Label Content="{Binding Path=Name}" 
+                                                               Foreground="Gray" FontWeight="Bold" FontSize="22" VerticalAlignment="Center" />
+                                                    <!--
+                                                    <TextBlock Text="{Binding Path=Items[0].ServerIP4AddressAsString}" VerticalAlignment="Center" Padding="20,5,0,0" />
+                                                    -->
+                                                    <TextBlock Style="{StaticResource RdsExplorerPanel_DisabledApp_ServerNotDefinedInRegistry}" FontSize="16" VerticalAlignment="Center" Padding="10,3,10,0" />
+                                                    <!--
+                                                                <TextBlock Text=" item(s)" FontSize="22" Foreground="Silver" FontStyle="Italic" VerticalAlignment="Bottom" />
+                                                                -->
+                                                </StackPanel>
+                                            </Expander.Header>
+                                            <ItemsPresenter />
+                                        </Expander>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </GroupStyle.ContainerStyle>
+                </GroupStyle>
+            </ListView.GroupStyle>
+        </ListView>
+
+        <!--<ListView x:Name="uc_ExplorerListView" >
+            --><!--
+                        ContextMenu="{DynamicResource uc_RemoteAppContextMenu}"
+						ContextMenuOpening="uc_RemoteApp_ContextMenuOpening" MouseDoubleClick="uc_RdsExplorer_MouseDoubleClick" KeyUp="uc_RdsExplorer_KeyUp">
+                        --><!--
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="Auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding IconFile}" Height="20" Width="20" Margin="40 0 0 0"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="App Name" DisplayMemberBinding="{Binding DisplayName}" />
+                    --><!--
+                                <GridViewColumn Header="RegistrySubKeyString" DisplayMemberBinding="{Binding RegistrySubKeyString}" />
+                                <GridViewColumn Header="Shortcut" DisplayMemberBinding="{Binding ShortCutLnkFile}" />
+                                --><!--
+                </GridView>
+            </ListView.View>
+            <ListView.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.ContainerStyle>
+                        <Style TargetType="{x:Type GroupItem}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <Expander x:Name="uc_RdsEx_ServerGroupExpander">
+                                            --><!--
+                                                        Expanded="uc_RdsEx_ServerGroupExpander_Expanded" Collapsed="uc_RdsEx_ServerGroupExpander_Collapsed" Loaded="uc_RdsEx_ServerGroupExpander_Loaded">
+                                                        --><!--
+                                            <Expander.Header>
+                                                <StackPanel x:Name="uc_RdsEx_ServerGroupStackPanel" Orientation="Horizontal" >
+                                                    <TextBlock Text="{Binding Name}" FontWeight="Bold" Foreground="Gray" FontSize="22" VerticalAlignment="Bottom" />
+                                                    --><!--
+                                                                <TextBlock Text="{Binding ItemCount}" FontSize="22" Foreground="Green" FontWeight="Bold" FontStyle="Italic" Margin="10,0,0,0" VerticalAlignment="Bottom" />
+                                                                <TextBlock Text=" item(s)" FontSize="22" Foreground="Silver" FontStyle="Italic" VerticalAlignment="Bottom" />
+                                                                --><!--
+                                                </StackPanel>
+                                            </Expander.Header>
+                                            <ItemsPresenter />
+                                        </Expander>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </GroupStyle.ContainerStyle>
+                </GroupStyle>
+            </ListView.GroupStyle>
+        </ListView>-->
+    </Grid>
+</UserControl>

@@ -1,0 +1,390 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Diagnostics;
+using Microsoft.Win32;
+using System.IO;
+using System.Runtime.InteropServices;
+using System.Runtime.Serialization;
+using System.Xml.Serialization;
+
+namespace Jrfc.Rds
+{
+    [Serializable()]
+    public class RdsServer
+    {
+        public RdsServer() {}
+
+        public RdsServer(System.Guid _GUID)
+        {
+            this.GUID = _GUID;
+            this.AppList = new RdsAppList(this);
+        }
+
+        public System.Guid GUID { get; set; }
+
+        [XmlIgnore]
+        public string Hostname
+        {
+            get
+            {
+                return RdsServer.GetHostnameFromGuid(this.GUID);
+            }
+        }
+
+        public RdsAppList AppList { get; set; }
+
+        public static string GetHostnameFromGuid(System.Guid _GUID)
+        {
+            string hostname = null;
+            try
+            {
+                string url = (string)Registry.GetValue(RdsServer.GetFeedRegistryKeyString(_GUID), "URL", "");
+                if (!string.IsNullOrWhiteSpace(url))
+                {
+                    Uri uri = new Uri(url);
+                    hostname = uri.Host;
+                }
+            }
+            catch(System.Exception x)
+            {
+                Jrfc.Exception.HandleException(x);
+            }
+            return hostname;
+        }
+
+        public static string GetFeedRegistryKeyString(System.Guid _GUID)
+        {
+            return @"HKEY_CURRENT_USER\SOFTWARE\Microsoft\Workspaces\Feeds\{" + _GUID.ToString() + "}";
+        }
+        public static string GetResourceMapRegistryKeyString(System.Guid _GUID)
+        {
+            return GetFeedRegistryKeyString(_GUID) + @"\ResourceMap";
+        }
+
+    }
+
+    [Serializable()]
+    public class RdsServerList : ObservableCollection<RdsServer>
+    {
+        public RdsServerList() { }
+        public RdsServerList(bool _RefreshOnCreate = true)
+        {
+            if (_RefreshOnCreate)
+            {
+                this.RefreshList();
+            }
+        }
+
+        public RdsServerList(RdsAppList _RdsAppsList)
+        {
+            foreach(RdsApp app in _RdsAppsList)
+            {
+                if (this[app.Hostname] == null)
+                {
+                    this.Add(app.HostServer);
+                }
+            }
+        }
+
+        public void RefreshList()
+        {
+            try
+            {
+                this.Clear();
+                RegistryKey regkey = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Workspaces\Feeds");
+                if (regkey == null)
+                    return;
+
+                string[] subkeys = regkey.GetSubKeyNames();
+
+                foreach (string subkey in subkeys)
+                {
+                    Guid server_guid;
+                    if (System.Guid.TryParse(subkey, out server_guid))
+                    {
+                        this.Add(new RdsServer(server_guid));
+                        //string host = this[server_guid].Hostname;
+                    }
+                }
+            }
+            catch (System.Exception x)
+            {
+                Jrfc.Exception.HandleException(x);
+            }
+        }
+
+        public RdsServer this[System.Guid index]
+        {
+            get
+            {
+                foreach(RdsServer server in this)
+                {
+                    if(server.GUID == index)
+                    {
+                        return (server);
+                    }
+                }
+                return null;
+            }
+        }
+
+        public RdsServer this[string _Hostname]
+        {
+            get
+            {
+                _Hostname = _Hostname.ToLower();
+                foreach (RdsServer server in this)
+                {
+                    if (server.Hostname.ToLower() == _Hostname)
+                    {
+                        return (server);
+                    }
+                }
+                return null;
+            }
+        }
+    }
+
+    [Serializable()]
+    public class RdsApp
+    {
+        public string RegistryFullKeyString
+        {
+            get { return @"HKEY_CURRENT_USER\" + this.RegistryRootKeyString + @"\" + this.RegistrySubKeyString; }
+        }
+        public string RegistryRootKeyString { get; set; }
+        public string RegistrySubKeyString { get; set; }
+        public string DisplayName
+        {
+            get
+            {
+                return GetDisplayNameFromRegistrySubKey();
+            }
+            set { }
+        }
+        public RdsServer HostServer { get; set; }
+        public string Hostname
+        {
+            get { return HostServer.Hostname; }
+        }
+        public string IconFile
+        {
+            get
+            {
+                string icon_file_name = (string)Registry.GetValue(this.RegistryFullKeyString, "IconFile", "");
+                return icon_file_name;
+            }
+        }
+
+        public RdsApp()
+        {
+            this.RegistryRootKeyString = null;
+            this.RegistrySubKeyString = null; 
+            this.HostServer = null;
+        }
+        public RdsApp(string _RegistryRootKeyString, string _RegistrySubKeyString, RdsServer _HostServer)
+        {
+            this.RegistryRootKeyString = _RegistryRootKeyString;
+            this.RegistrySubKeyString = _RegistrySubKeyString;
+            this.HostServer = _HostServer;
+        }
+        public string ShortCutLnkFile
+        {
+            get
+            {
+                string appDataFolder = Environment.GetEnvironmentVariable("APPDATA");
+                return appDataFolder + "\\Microsoft\\Windows\\Start Menu\\Programs\\" + this.Hostname + " (RADC)\\" + this.RegistrySubKeyString + ".lnk";
+            }
+        }
+
+        public void Launch()
+        {
+            //
+            // C:\Users\John\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\accounting.jrfcorp.net(RADC)\Acrobat Reader DC (accounting.jrfcorp.net).lnk
+            //
+            try
+            {
+                ProcessStartInfo psi = new ProcessStartInfo(this.ShortCutLnkFile);
+                Process.Start(psi);
+            }
+            catch(System.Exception x)
+            {
+                Jrfc.Exception.HandleException(x);
+            }
+
+        }
+        private string GetDisplayNameFromRegistrySubKey()
+        {
+            string name = this.RegistrySubKeyString.Replace("(" + this.HostServer.Hostname + ")", "");
+            return name.Trim();
+        }
+
+        public enum PinAction
+        {
+            Pin,
+            UnPin
+        }
+        public void PinToTaskbar(PinAction _PinAction)
+        {
+            if (!File.Exists(this.ShortCutLnkFile)) throw new FileNotFoundException(this.ShortCutLnkFile);
+
+            try
+            {
+                Jrfc.Shell.Pin(this.ShortCutLnkFile, Shell.PIN_DESTINATION.Taskbar, this.IconFile);
+            }
+            catch (System.Exception x)
+            {
+                Jrfc.Exception.HandleException(x);
+            }
+        }
+        public bool IsPinnedToTaskbar()
+        {
+            return Jrfc.Shell.IsPinned(this.ShortCutLnkFile, Shell.PIN_DESTINATION.Taskbar);
+        }
+
+        public void PinToStart(PinAction _action)
+        {
+            if (!File.Exists(this.ShortCutLnkFile)) throw new FileNotFoundException(this.ShortCutLnkFile);
+
+            try
+            {
+                Jrfc.Shell.Pin(this.ShortCutLnkFile, Shell.PIN_DESTINATION.Start, this.IconFile);
+            }
+            catch (System.Exception x)
+            {
+                Jrfc.Exception.HandleException(x);
+            }
+        }
+        public bool IsPinnedToStart()
+        {
+            return Jrfc.Shell.IsPinned(this.ShortCutLnkFile, Shell.PIN_DESTINATION.Start);
+        }
+    }
+
+    [Serializable()]
+    public class RdsAppList : ObservableCollection<RdsApp>
+    {
+        public RdsServerList ServerList { get; set; }
+        //public RdsServer HostServer { get; set; }
+
+        public RdsAppList()
+        {
+            this.ServerList = null;
+        }
+        
+        public RdsAppList(RdsServerList _RdsServerList)
+        {
+            this.ServerList = _RdsServerList;
+            foreach(RdsServer s in _RdsServerList)
+            {
+                if (s.AppList != null)
+                {
+                    foreach (RdsApp app in s.AppList)
+                    {
+                        this.Add(app);
+                    }
+                }
+            }
+
+        }
+        public RdsAppList(RdsServer _HostServer)
+        {
+            this.ServerList = new RdsServerList(false);
+            this.ServerList.Add(_HostServer);
+            this.RefreshList();
+        }
+        public RdsAppList(StringCollection _RegistryFullKeyStrings, RdsAppList _MasterAppList)
+        {
+            // Creat an AppList made up of every app that can be found using _RegistryFullKeyStrings to 
+            // search another source RdsAppList _MasterAppList
+            foreach(string regkey in _RegistryFullKeyStrings)
+            {
+                RdsApp app = _MasterAppList[regkey];
+                if(app != null)  // if null then a previous favorite is not in the _MasterAppList. Ignore it.
+                {
+                    this.Add(app);
+                }
+            }
+        }
+                
+        public StringCollection ToStringCollection()
+        {
+            StringCollection sc = new StringCollection();
+            foreach(RdsApp app in this)
+            {
+                sc.Add(app.RegistryFullKeyString);
+            }
+            return sc;
+        }
+
+        public List<string> Hostnames
+        {
+            get
+            {
+                List<string> hosts = new List<string>();
+                string last_host = "";
+                foreach(RdsApp app in this)
+                {
+                    if(app.Hostname != last_host)
+                    {
+                        hosts.Add(app.Hostname);
+                        last_host = app.Hostname;
+                    }
+                }
+                return hosts;
+            }
+        }
+
+        public Dictionary<string, string> GetAppLinksAndDisplayNamesForHost(string _Hostname)
+        {
+            Dictionary<String, string> linkNamePairs = new Dictionary<string, string>();
+
+            foreach (RdsApp app in this)
+            {
+                if (app.Hostname == _Hostname)
+                    linkNamePairs.Add(app.ShortCutLnkFile, app.DisplayName);
+            }
+
+            return linkNamePairs;
+        }
+        public void RefreshList()
+        {
+            if (this.ServerList == null)
+                return;
+
+            this.Clear();
+            foreach (RdsServer s in this.ServerList)
+            {
+                string rootkey = @"SOFTWARE\Microsoft\Workspaces\Feeds\{" + s.GUID.ToString() + @"}\ResourceMap";
+                RegistryKey regkey = Registry.CurrentUser.OpenSubKey(rootkey);
+                string[] subkeys = regkey.GetSubKeyNames();
+
+                foreach (string subkey in subkeys)
+                {
+                    this.Add(new RdsApp(rootkey, subkey, s));
+                }
+            }
+        }
+
+        public RdsApp this[string _FullKeyString]
+        {
+            get
+            {
+                foreach (RdsApp app in this)
+                {
+                    if(app.RegistryFullKeyString == _FullKeyString)
+                    {
+                        return app;
+                    }
+                }
+                return null;
+            }
+        }
+    }
+
+}

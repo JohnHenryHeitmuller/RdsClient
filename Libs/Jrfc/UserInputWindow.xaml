@@ -1,0 +1,17 @@
+﻿<Window x:Class="Jrfc.UserInputWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Jrfc"
+             mc:Ignorable="d" d:DesignWidth="400" Height="128.058" Width="400" Loaded="Window_Loaded" ShowInTaskbar="False" WindowStartupLocation="Manual">
+    <StackPanel>
+        <TextBlock x:Name="uc_UserPrompt" Text="Enter some text" Padding="5" />
+        <TextBox x:Name="uc_UserInput" Margin="5,0" TabIndex="1" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button x:Name="uc_OkayButton" Content="OK" Click="uc_OkayButton_Click" Width="70" Padding="5"/>
+            <TextBlock Text="     "/>
+            <Button x:Name="uc_CancelButton" Content="Cancel" Click="uc_CancelButton_Click" Width="70" Padding="5"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

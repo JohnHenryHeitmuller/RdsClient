@@ -1,0 +1,73 @@
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\bin\Release\PinTo10\PinTo10.exe
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\bin\Release\RdsClient.exe.config
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\bin\Release\RdsClient.exe
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\bin\Release\RdsClient.pdb
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\bin\Release\Jrfc.dll
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\bin\Release\Microsoft.WindowsAPICodePack.dll
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\bin\Release\Microsoft.WindowsAPICodePack.Shell.dll
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\bin\Release\Jrfc.pdb
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient.csprojResolveAssemblyReference.cache
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Release\AboutWindow.g.cs
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Release\MainWindow.g.cs
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Release\PreferencesWindow.g.cs
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Release\App.g.cs
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient_MarkupCompile.cache
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient_MarkupCompile.lref
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Release\AboutWindow.baml
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Release\MainWindow.baml
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Release\PreferencesWindow.baml
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient.g.resources
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient.Properties.Resources.resources
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient.csproj.GenerateResource.Cache
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient.exe
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient.pdb
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\RdsClient.exe.config
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient.exe
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient.pdb
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\RdsClient.exe.config
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient.exe
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient.pdb
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\PinTo10\PinTo10.exe
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\RdsClient.exe
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\RdsClient.pdb
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\Jrfc.dll
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\Microsoft.WindowsAPICodePack.dll
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\Jrfc.pdb
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient.csprojResolveAssemblyReference.cache
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\AboutWindow.g.cs
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\MainWindow.g.cs
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\PreferencesWindow.g.cs
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\App.g.cs
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient_MarkupCompile.cache
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient_MarkupCompile.lref
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\AboutWindow.baml
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\MainWindow.baml
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\PreferencesWindow.baml
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient.g.resources
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient.Properties.Resources.resources
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient.csproj.GenerateResource.Cache
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\RdsClient.exe.CodeAnalysisLog.xml
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\RdsClient.exe.lastcodeanalysissucceeded
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient.csprojResolveAssemblyReference.cache
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\AboutWindow.g.cs
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\MainWindow.g.cs
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\PreferencesWindow.g.cs
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\App.g.cs
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient_MarkupCompile.cache
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient_MarkupCompile.lref
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\PinTo10\PinTo10.exe
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\RdsClient.exe
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\RdsClient.pdb
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\Jrfc.dll
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\Microsoft.WindowsAPICodePack.dll
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\Microsoft.WindowsAPICodePack.Shell.dll
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Release\Jrfc.pdb
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\AboutWindow.baml
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\MainWindow.baml
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\PreferencesWindow.baml
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient.g.resources
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient.Properties.Resources.resources
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient.csproj.GenerateResource.cache
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient.csproj.CoreCompileInputs.cache
+D:\Users\John\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Release\RdsClient.csproj.CopyComplete

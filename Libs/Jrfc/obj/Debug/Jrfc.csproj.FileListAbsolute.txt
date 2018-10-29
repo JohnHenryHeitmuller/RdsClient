@@ -1,0 +1,40 @@
+D:\Users\John\OneDrive\Dev\Projects\libs\Jrfc\bin\Debug\PinTo10\PinTo10.exe
+D:\Users\John\OneDrive\Dev\Projects\libs\Jrfc\bin\Debug\Jrfc.dll
+D:\Users\John\OneDrive\Dev\Projects\libs\Jrfc\bin\Debug\Jrfc.pdb
+D:\Users\John\OneDrive\Dev\Projects\libs\Jrfc\obj\Debug\Interop.Shell32.dll
+D:\Users\John\OneDrive\Dev\Projects\libs\Jrfc\obj\Debug\Jrfc.csproj.ResolveComReference.cache
+D:\Users\John\OneDrive\Dev\Projects\libs\Jrfc\obj\Debug\RdsExplorerContainer.g.cs
+D:\Users\John\OneDrive\Dev\Projects\libs\Jrfc\obj\Debug\RdsExplorerPanel.g.cs
+D:\Users\John\OneDrive\Dev\Projects\libs\Jrfc\obj\Debug\UserInputWindow.g.cs
+D:\Users\John\OneDrive\Dev\Projects\libs\Jrfc\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Users\John\OneDrive\Dev\Projects\libs\Jrfc\obj\Debug\Jrfc_MarkupCompile.cache
+D:\Users\John\OneDrive\Dev\Projects\libs\Jrfc\obj\Debug\Jrfc_MarkupCompile.lref
+D:\Users\John\OneDrive\Dev\Projects\libs\Jrfc\obj\Debug\RdsExplorerContainer.baml
+D:\Users\John\OneDrive\Dev\Projects\libs\Jrfc\obj\Debug\RdsExplorerPanel.baml
+D:\Users\John\OneDrive\Dev\Projects\libs\Jrfc\obj\Debug\UserInputWindow.baml
+D:\Users\John\OneDrive\Dev\Projects\libs\Jrfc\obj\Debug\Jrfc.g.resources
+D:\Users\John\OneDrive\Dev\Projects\libs\Jrfc\obj\Debug\Jrfc.dll
+D:\Users\John\OneDrive\Dev\Projects\libs\Jrfc\obj\Debug\Jrfc.pdb
+D:\Users\John\OneDrive\Dev\Projects\libs\Jrfc\obj\Debug\Jrfc.csprojResolveAssemblyReference.cache
+D:\Users\John\OneDrive\Dev\Projects\libs\Jrfc\obj\Debug\Jrfc.Properties.Resources.resources
+D:\Users\John\OneDrive\Dev\Projects\libs\Jrfc\obj\Debug\Jrfc.csproj.GenerateResource.Cache
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc\bin\Debug\PinTo10\PinTo10.exe
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc\bin\Debug\Jrfc.dll
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc\bin\Debug\Jrfc.pdb
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc\obj\Debug\Jrfc.csprojResolveAssemblyReference.cache
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc\obj\Debug\Interop.Shell32.dll
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc\obj\Debug\Jrfc.csproj.ResolveComReference.cache
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc\obj\Debug\RdsExplorerContainer.g.cs
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc\obj\Debug\RdsExplorerPanel.g.cs
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc\obj\Debug\UserInputWindow.g.cs
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc\obj\Debug\Jrfc_MarkupCompile.cache
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc\obj\Debug\Jrfc_MarkupCompile.lref
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc\obj\Debug\RdsExplorerContainer.baml
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc\obj\Debug\RdsExplorerPanel.baml
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc\obj\Debug\UserInputWindow.baml
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc\obj\Debug\Jrfc.g.resources
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc\obj\Debug\Jrfc.Properties.Resources.resources
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc\obj\Debug\Jrfc.csproj.GenerateResource.Cache
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc\obj\Debug\Jrfc.dll
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc\obj\Debug\Jrfc.pdb

@@ -1,0 +1,700 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 14.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="14.0">
+ <Targets>
+  <Target Name="C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc\bin\Release\Jrfc.dll">
+   <Modules>
+    <Module Name="jrfc.dll">
+     <Namespaces>
+      <Namespace Name="Jrfc">
+       <Types>
+        <Type Name="IconChanger" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#BeginUpdateResource(System.String,System.Boolean)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="CriticalWarning">Because it is a P/Invoke method, 'IconChanger.BeginUpdateResource(string, bool)' should be defined in a class named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Issue>
+            </Message>
+            <Message Id="0" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Name="ParameterImplicitAnsi" Certainty="75" Level="Error">To reduce security risk, marshal parameter 'pFileName' as Unicode, by setting DllImport.CharSet to CharSet.Unicode, or by explicitly marshaling the parameter as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, specify MarshalAs explicitly, and set BestFitMapping=false; for added security, also set ThrowOnUnmappableChar=true.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#EndUpdateResource(System.IntPtr,System.Boolean)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="CriticalWarning">Because it is a P/Invoke method, 'IconChanger.EndUpdateResource(IntPtr, bool)' should be defined in a class named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateResource(System.IntPtr,System.UInt32,System.UInt16,System.UInt16,System.Byte[],System.UInt32)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="CriticalWarning">Because it is a P/Invoke method, 'IconChanger.UpdateResource(IntPtr, uint, ushort, ushort, byte[], uint)' should be defined in a class named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Issue>
+            </Message>
+            <Message Id="1" TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Name="Parameter" Certainty="95" Level="Error">As it is declared in your code, parameter 'lpType' of P/Invoke 'IconChanger.UpdateResource(IntPtr, uint, ushort, ushort, byte[], uint)' will be 4 bytes wide on 64-bit platforms. This is not correct, as the actual native declaration of this API indicates it should be 8 bytes wide on 64-bit platforms. Consult the MSDN Platform SDK documentation for help determining what data type should be used instead of 'uint'.</Issue>
+            </Message>
+            <Message Id="2" TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Name="Parameter" Certainty="95" Level="Error">As it is declared in your code, parameter 'lpName' of P/Invoke 'IconChanger.UpdateResource(IntPtr, uint, ushort, ushort, byte[], uint)' will be 2 bytes wide on 32-bit platforms. This is not correct, as the actual native declaration of this API indicates it should be 4 bytes wide on 32-bit platforms. Consult the MSDN Platform SDK documentation for help determining what data type should be used instead of 'ushort'.</Issue>
+             <Issue Name="Parameter" Certainty="95" Level="Error">As it is declared in your code, parameter 'lpName' of P/Invoke 'IconChanger.UpdateResource(IntPtr, uint, ushort, ushort, byte[], uint)' will be 2 bytes wide on 64-bit platforms. This is not correct, as the actual native declaration of this API indicates it should be 8 bytes wide on 64-bit platforms. Consult the MSDN Platform SDK documentation for help determining what data type should be used instead of 'ushort'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="IconChanger+Icons" Kind="Class" Accessibility="Public" ExternallyVisible="False">
+         <Members>
+          <Member Name="#ToGroupData(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc" File="IconChanger.cs" Line="50">Object 'ms' can be disposed more than once in method 'IconChanger.Icons.ToGroupData(int)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 50</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="NativeMethods" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#BeginUpdateResource(System.String,System.Boolean)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="0" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Name="ParameterImplicitAnsi" Certainty="75" Level="Error">To reduce security risk, marshal parameter 'pFileName' as Unicode, by setting DllImport.CharSet to CharSet.Unicode, or by explicitly marshaling the parameter as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, specify MarshalAs explicitly, and set BestFitMapping=false; for added security, also set ThrowOnUnmappableChar=true.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeregisterEventSource(System.IntPtr)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.DeregisterEventSource(IntPtr)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LoadLibrary(System.String)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="0" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Name="ParameterImplicitAnsi" Certainty="75" Level="Error">To reduce security risk, marshal parameter 'lpFileName' as Unicode, by setting DllImport.CharSet to CharSet.Unicode, or by explicitly marshaling the parameter as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, specify MarshalAs explicitly, and set BestFitMapping=false; for added security, also set ThrowOnUnmappableChar=true.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LoadString(System.IntPtr,System.UInt32,System.Text.StringBuilder,System.Int32)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="2" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Name="Parameter" Certainty="75" Level="Error">To reduce security risk, marshal parameter 'lpBuffer' as Unicode, by setting DllImport.CharSet to CharSet.Unicode, or by explicitly marshaling the parameter as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, set BestFitMapping=false; for added security, also set ThrowOnUnmappableChar=true.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#NetApiBufferFree(System.IntPtr)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.NetApiBufferFree(IntPtr)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#NetGetJoinInformation(System.String,System.IntPtr&amp;,Jrfc.NativeMethods+NetJoinStatus&amp;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.NetGetJoinInformation(string, out IntPtr, out NativeMethods.NetJoinStatus)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#RegisterEventSource(System.String,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.RegisterEventSource(string, string)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+            <Message Id="0" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Name="ParameterImplicitAnsi" Certainty="75" Level="Error">To reduce security risk, marshal parameter 'lpUNCServerName' as Unicode, by setting DllImport.CharSet to CharSet.Unicode, or by explicitly marshaling the parameter as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, specify MarshalAs explicitly, and set BestFitMapping=false; for added security, also set ThrowOnUnmappableChar=true.</Issue>
+            </Message>
+            <Message Id="1" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Name="ParameterImplicitAnsi" Certainty="75" Level="Error">To reduce security risk, marshal parameter 'lpSourceName' as Unicode, by setting DllImport.CharSet to CharSet.Unicode, or by explicitly marshaling the parameter as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, specify MarshalAs explicitly, and set BestFitMapping=false; for added security, also set ThrowOnUnmappableChar=true.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ReportEvent(System.IntPtr,System.UInt16,System.UInt16,System.Int32,System.IntPtr,System.UInt16,System.UInt32,System.String[],System.Byte[])" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.ReportEvent(IntPtr, ushort, ushort, int, IntPtr, ushort, uint, string[], byte[])' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SHGetPathFromIDListW(System.IntPtr,System.Text.StringBuilder)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.SHGetPathFromIDListW(IntPtr, StringBuilder)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+            <Message Id="1" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Name="ParameterImplicitAnsi" Certainty="75" Level="Error">To reduce security risk, marshal parameter 'pszPath' as Unicode, by setting DllImport.CharSet to CharSet.Unicode, or by explicitly marshaling the parameter as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, specify MarshalAs explicitly, and set BestFitMapping=false; for added security, also set ThrowOnUnmappableChar=true.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WTSCloseServer(System.IntPtr)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.WTSCloseServer(IntPtr)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WTSDisconnectSession(System.IntPtr,System.Int32,System.Boolean)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.WTSDisconnectSession(IntPtr, int, bool)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WTSEnumerateProcesses(System.IntPtr,System.Int32,System.Int32,System.IntPtr&amp;,System.Int32&amp;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.WTSEnumerateProcesses(IntPtr, int, int, ref IntPtr, ref int)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WTSEnumerateServers(System.String,System.Int32,System.Int32,System.IntPtr&amp;,System.UInt32&amp;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.WTSEnumerateServers(string, int, int, ref IntPtr, ref uint)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+            <Message Id="0" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Name="ParameterImplicitAnsi" Certainty="75" Level="Error">To reduce security risk, marshal parameter 'pDomainName' as Unicode, by setting DllImport.CharSet to CharSet.Unicode, or by explicitly marshaling the parameter as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, specify MarshalAs explicitly, and set BestFitMapping=false; for added security, also set ThrowOnUnmappableChar=true.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WTSEnumerateSessions(System.IntPtr,System.Int32,System.Int32,System.IntPtr&amp;,System.Int32&amp;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.WTSEnumerateSessions(IntPtr, int, int, ref IntPtr, ref int)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WTSFreeMemory(System.IntPtr)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.WTSFreeMemory(IntPtr)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WTSLogoffSession(System.IntPtr,System.Int32,System.Boolean)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.WTSLogoffSession(IntPtr, int, bool)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WTSOpenServer(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.WTSOpenServer(string)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+            <Message Id="0" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Name="ParameterImplicitAnsi" Certainty="75" Level="Error">To reduce security risk, marshal parameter 'pServerName' as Unicode, by setting DllImport.CharSet to CharSet.Unicode, or by explicitly marshaling the parameter as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, specify MarshalAs explicitly, and set BestFitMapping=false; for added security, also set ThrowOnUnmappableChar=true.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WTSQuerySessionInformation(System.IntPtr,System.Int32,Jrfc.NativeMethods+WTS_INFO_CLASS,System.IntPtr&amp;,System.UInt32&amp;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.WTSQuerySessionInformation(IntPtr, int, NativeMethods.WTS_INFO_CLASS, out IntPtr, out uint)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WTSQueryUserToken(System.UInt32,System.IntPtr&amp;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.WTSQueryUserToken(uint, out IntPtr)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WTSRegisterSessionNotification(System.IntPtr,System.Int32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.WTSRegisterSessionNotification(IntPtr, int)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WTSSendMessage(System.IntPtr,System.Int32,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Int32&amp;,System.Boolean)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.WTSSendMessage(IntPtr, int, string, int, string, int, int, int, out int, bool)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+            <Message Id="2" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Name="ParameterImplicitAnsi" Certainty="75" Level="Error">To reduce security risk, marshal parameter 'pTitle' as Unicode, by setting DllImport.CharSet to CharSet.Unicode, or by explicitly marshaling the parameter as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, specify MarshalAs explicitly, and set BestFitMapping=false; for added security, also set ThrowOnUnmappableChar=true.</Issue>
+            </Message>
+            <Message Id="4" TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Name="ParameterImplicitAnsi" Certainty="75" Level="Error">To reduce security risk, marshal parameter 'pMessage' as Unicode, by setting DllImport.CharSet to CharSet.Unicode, or by explicitly marshaling the parameter as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, specify MarshalAs explicitly, and set BestFitMapping=false; for added security, also set ThrowOnUnmappableChar=true.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WTSShutdownSystem(System.IntPtr,System.Int64)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="1" TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Name="Parameter" Certainty="95" Level="Error">As it is declared in your code, parameter 'ShutdownFlags' of P/Invoke 'NativeMethods.WTSShutdownSystem(IntPtr, long)' will be 8 bytes wide on 32-bit platforms. This is not correct, as the actual native declaration of this API indicates it should be 4 bytes wide on 32-bit platforms. Consult the MSDN Platform SDK documentation for help determining what data type should be used instead of 'long'.</Issue>
+             <Issue Name="Parameter" Certainty="95" Level="Error">As it is declared in your code, parameter 'ShutdownFlags' of P/Invoke 'NativeMethods.WTSShutdownSystem(IntPtr, long)' will be 8 bytes wide on 64-bit platforms. This is not correct, as the actual native declaration of this API indicates it should be 4 bytes wide on 64-bit platforms. Consult the MSDN Platform SDK documentation for help determining what data type should be used instead of 'long'.</Issue>
+            </Message>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.WTSShutdownSystem(IntPtr, long)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WTSTerminateProcess(System.IntPtr,System.Int32,System.Int32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.WTSTerminateProcess(IntPtr, int, int)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WTSVirtualChannelClose(System.IntPtr)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.WTSVirtualChannelClose(IntPtr)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WTSVirtualChannelOpen(System.IntPtr,System.Int32,System.IntPtr)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.WTSVirtualChannelOpen(IntPtr, int, IntPtr)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WTSVirtualChannelRead(System.IntPtr,System.Byte[],System.Int32,System.Int32&amp;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="1" TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Name="Parameter" Certainty="95" Level="Error">As it is declared in your code, parameter 'buffer' of P/Invoke 'NativeMethods.WTSVirtualChannelRead(IntPtr, byte[], int, ref int)' will be 8 bytes wide on 64-bit platforms. This is not correct, as the actual native declaration of this API indicates it should be 4 bytes wide on 64-bit platforms. Consult the MSDN Platform SDK documentation for help determining what data type should be used instead of 'byte[]'.</Issue>
+            </Message>
+            <Message Id="2" TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Name="Parameter" Certainty="95" Level="Error">As it is declared in your code, parameter 'length' of P/Invoke 'NativeMethods.WTSVirtualChannelRead(IntPtr, byte[], int, ref int)' will be 4 bytes wide on 64-bit platforms. This is not correct, as the actual native declaration of this API indicates it should be 8 bytes wide on 64-bit platforms. Consult the MSDN Platform SDK documentation for help determining what data type should be used instead of 'int'.</Issue>
+            </Message>
+            <Message Id="3" TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Name="Parameter" Certainty="95" Level="Error">As it is declared in your code, parameter 'bytesRead' of P/Invoke 'NativeMethods.WTSVirtualChannelRead(IntPtr, byte[], int, ref int)' will be 8 bytes wide on 64-bit platforms. This is not correct, as the actual native declaration of this API indicates it should be 4 bytes wide on 64-bit platforms. Consult the MSDN Platform SDK documentation for help determining what data type should be used instead of 'int&amp;'.</Issue>
+            </Message>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.WTSVirtualChannelRead(IntPtr, byte[], int, ref int)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WTSVirtualChannelWrite(System.IntPtr,System.Byte[],System.Int32,System.Int32&amp;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'NativeMethods.WTSVirtualChannelWrite(IntPtr, byte[], int, ref int)' so that it is no longer visible from outside its assembly.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="NativeMethods+WTS_PROCESS_INFO" Kind="Struct" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ProcessName" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="CriticalError">Make 'NativeMethods.WTS_PROCESS_INFO.ProcessName' private.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UserSid" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="CriticalError">Make 'NativeMethods.WTS_PROCESS_INFO.UserSid' private.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="NativeMethods+WTS_SESSION_INFO" Kind="Struct" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#pWinStationName" Kind="Field" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="CriticalError">Make 'NativeMethods.WTS_SESSION_INFO.pWinStationName' private.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="RdsExplorerContainer" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#_CreateDelegate(System.Type,System.String)" Kind="Method" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#m_RightClickedTabItem" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkAllNonSerializableFields" Category="Microsoft.Usage" CheckId="CA2235" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error">Field 'RdsExplorerContainer.m_RightClickedTabItem' is a member of type 'RdsExplorerContainer', which is serializable, but is of type 'TabItem', which is not serializable. Add the NonSerializedAttribute to 'RdsExplorerContainer.m_RightClickedTabItem'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#System.Windows.Markup.IComponentConnector.Connect(System.Int32,System.Object)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+            <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#uc_AllAppsPanel" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#uc_AllAppsTabItem" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkAllNonSerializableFields" Category="Microsoft.Usage" CheckId="CA2235" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error">Field 'RdsExplorerContainer.uc_AllAppsTabItem' is a member of type 'RdsExplorerContainer', which is serializable, but is of type 'TabItem', which is not serializable. Add the NonSerializedAttribute to 'RdsExplorerContainer.uc_AllAppsTabItem'.</Issue>
+            </Message>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#uc_MainTabControl" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkAllNonSerializableFields" Category="Microsoft.Usage" CheckId="CA2235" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error">Field 'RdsExplorerContainer.uc_MainTabControl' is a member of type 'RdsExplorerContainer', which is serializable, but is of type 'TabControl', which is not serializable. Add the NonSerializedAttribute to 'RdsExplorerContainer.uc_MainTabControl'.</Issue>
+            </Message>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#uc_MainTabControl_ContextMenu" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkAllNonSerializableFields" Category="Microsoft.Usage" CheckId="CA2235" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error">Field 'RdsExplorerContainer.uc_MainTabControl_ContextMenu' is a member of type 'RdsExplorerContainer', which is serializable, but is of type 'ContextMenu', which is not serializable. Add the NonSerializedAttribute to 'RdsExplorerContainer.uc_MainTabControl_ContextMenu'.</Issue>
+            </Message>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#uc_MainTabControl_ContextMenu_DeleteTab" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkAllNonSerializableFields" Category="Microsoft.Usage" CheckId="CA2235" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error">Field 'RdsExplorerContainer.uc_MainTabControl_ContextMenu_DeleteTab' is a member of type 'RdsExplorerContainer', which is serializable, but is of type 'MenuItem', which is not serializable. Add the NonSerializedAttribute to 'RdsExplorerContainer.uc_MainTabControl_ContextMenu_DeleteTab'.</Issue>
+            </Message>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#uc_MainTabControl_ContextMenu_RefreshTab" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkAllNonSerializableFields" Category="Microsoft.Usage" CheckId="CA2235" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error">Field 'RdsExplorerContainer.uc_MainTabControl_ContextMenu_RefreshTab' is a member of type 'RdsExplorerContainer', which is serializable, but is of type 'MenuItem', which is not serializable. Add the NonSerializedAttribute to 'RdsExplorerContainer.uc_MainTabControl_ContextMenu_RefreshTab'.</Issue>
+            </Message>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#uc_RdsExplorer_AddTabButton" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkAllNonSerializableFields" Category="Microsoft.Usage" CheckId="CA2235" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error">Field 'RdsExplorerContainer.uc_RdsExplorer_AddTabButton' is a member of type 'RdsExplorerContainer', which is serializable, but is of type 'Button', which is not serializable. Add the NonSerializedAttribute to 'RdsExplorerContainer.uc_RdsExplorer_AddTabButton'.</Issue>
+            </Message>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#uc_RdsExplorer_ButtonGrid" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkAllNonSerializableFields" Category="Microsoft.Usage" CheckId="CA2235" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error">Field 'RdsExplorerContainer.uc_RdsExplorer_ButtonGrid' is a member of type 'RdsExplorerContainer', which is serializable, but is of type 'Grid', which is not serializable. Add the NonSerializedAttribute to 'RdsExplorerContainer.uc_RdsExplorer_ButtonGrid'.</Issue>
+            </Message>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#uc_RdsExplorer_MainGrid" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkAllNonSerializableFields" Category="Microsoft.Usage" CheckId="CA2235" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error">Field 'RdsExplorerContainer.uc_RdsExplorer_MainGrid' is a member of type 'RdsExplorerContainer', which is serializable, but is of type 'Grid', which is not serializable. Add the NonSerializedAttribute to 'RdsExplorerContainer.uc_RdsExplorer_MainGrid'.</Issue>
+            </Message>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#uc_RdsExplorer_RefreshButton" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkAllNonSerializableFields" Category="Microsoft.Usage" CheckId="CA2235" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error">Field 'RdsExplorerContainer.uc_RdsExplorer_RefreshButton' is a member of type 'RdsExplorerContainer', which is serializable, but is of type 'Button', which is not serializable. Add the NonSerializedAttribute to 'RdsExplorerContainer.uc_RdsExplorer_RefreshButton'.</Issue>
+            </Message>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="RdsExplorerPanel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#System.Windows.Markup.IComponentConnector.Connect(System.Int32,System.Object)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+            <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#System.Windows.Markup.IStyleConnector.Connect(System.Int32,System.Object)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+            <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#uc_RdsExplorerPanel" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#uc_RdsExplorerPanel_ListView" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkAllNonSerializableFields" Category="Microsoft.Usage" CheckId="CA2235" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error">Field 'RdsExplorerPanel.uc_RdsExplorerPanel_ListView' is a member of type 'RdsExplorerPanel', which is serializable, but is of type 'ListView', which is not serializable. Add the NonSerializedAttribute to 'RdsExplorerPanel.uc_RdsExplorerPanel_ListView'.</Issue>
+            </Message>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Shell" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Pin(System.String,Jrfc.Shell+PIN_DESTINATION,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\john\Dropbox (JRCC)\Dev\Projects\libs\Jrfc" File="Shell.cs" Line="85">'Shell.Pin(string, Shell.PIN_DESTINATION, string)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="UserInputWindow" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#System.Windows.Markup.IComponentConnector.Connect(System.Int32,System.Object)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+            <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#uc_CancelButton" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#uc_OkayButton" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#uc_UserInput" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+          <Member Name="#uc_UserPrompt" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="Jrfc.Properties">
+       <Types>
+        <Type Name="Resources" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="ExcludedInSource" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="Jrfc.Settings">
+       <Types>
+        <Type Name="AppSettingMetadataDictionary" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="NonBreaking">
+           <Issue Certainty="75" Level="Warning">Add [Serializable] to 'AppSettingMetadataDictionary' as this type implements ISerializable.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="Jrfc.Wts">
+       <Types>
+        <Type Name="WTSSessionList" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2016-08-09 20:34:53Z" FixCategory="DependsOnFix">
+           <Issue Name="DependsOnFix" Certainty="95" Level="CriticalError">Implement IDisposable on 'WTSSessionList' because it creates members of the following IDisposable types: 'BackgroundWorker'. If 'WTSSessionList' has previously shipped, adding new members that implement IDisposable to this type is considered a breaking change to existing consumers.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="AvoidExcessiveComplexity" Category="Microsoft.Maintainability" CheckId="CA1502">
+   <Name>Avoid excessive complexity</Name>
+   <Description>Method implementations that are exceedingly complex increase the challenge of understanding and maintaining code.</Description>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182212.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Warning</MessageLevel>
+   <File Name="maintainabilityrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
+   <Name>Avoid uncalled private code</Name>
+   <Description>There is uncalled code that is not externally visible and is not a known runtime entry point. If this violation fires in error, please send a problem report to the Visual Studio Code Analysis team.</Description>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182264.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823">
+   <Name>Avoid unused private fields</Name>
+   <Description>Private fields were detected that do not appear to be accessed within the assembly. If this violation fires in error, please send a problem report to the Visual Studio Code Analysis team.</Description>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms245042.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202">
+   <Name>Do not dispose objects multiple times</Name>
+   <Description>A correctly implemented Dispose method can be called multiple times without throwing an exception. However, this is not guaranteed and to avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.</Description>
+   <Resolution Name="Default">Object {0} can be disposed more than once in method {1}. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 50</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182334.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800">
+   <Name>Do not cast unnecessarily</Name>
+   <Description>Avoid duplicate casts where possible, since there is a cost associated with them.</Description>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182271.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="performancerules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033">
+   <Name>Interface methods should be callable by child types</Name>
+   <Description>Explicit method implementations are defined with private accessibility. Classes that derive from classes with explicit method implementations and choose to re-declare them on the class will not be able to call into the base class implementation unless the base class has provided an alternate method with appropriate accessibility. When overriding a base class method that has been hidden by explicit interface implementation, in order to call into the base class implementation, a derived class must cast the base pointer to the relevant interface. When calling through this reference, however, the derived class implementation will actually be invoked, resulting in recursion and an eventual stack overflow.</Description>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182153.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAllNonSerializableFields" Category="Microsoft.Usage" CheckId="CA2235">
+   <Name>Mark all non-serializable fields</Name>
+   <Description>All fields that cannot be serialized directly should have the NonSerializedAttribute. Types that have the SerializableAttribute should not have fields of types that do not have the SerializableAttribute unless the fields are marked with the NonSerializedAttribute.</Description>
+   <Resolution Name="Default">Field {0} is a member of type {1}, which is serializable, but is of type {2}, which is not serializable. Add the NonSerializedAttribute to {0}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182349.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237">
+   <Name>Mark ISerializable types with SerializableAttribute</Name>
+   <Description>The System.Runtime.Serialization.ISerializable interface allows the type to customize its serialization, while the Serializable attribute enables the runtime to recognize the type as being serializable.</Description>
+   <Resolution Name="Default">Add [Serializable] to {0} as this type implements ISerializable.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182350.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="usagerules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060">
+   <Name>Move P/Invokes to NativeMethods class</Name>
+   <Description>This type contains members with the DllImport attribute. Members with the DllImport attribute should be contained in classes named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Description>
+   <Resolution Name="Default">Because it is a P/Invoke method, {0} should be defined in a class named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182161.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalWarning</MessageLevel>
+   <File Name="designrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="PInvokeDeclarationsShouldBePortable" Category="Microsoft.Portability" CheckId="CA1901">
+   <Name>P/Invoke declarations should be portable</Name>
+   <Description>.</Description>
+   <Resolution Name="Parameter">As it is declared in your code, parameter {0} of P/Invoke {1} will be {2} bytes wide on {3} platforms. This is not correct, as the actual native declaration of this API indicates it should be {4} bytes wide on {3} platforms. Consult the MSDN Platform SDK documentation for help determining what data type should be used instead of {5}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182284(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="portabilityrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401">
+   <Name>P/Invokes should not be visible</Name>
+   <Description>Interop layer should not be public. The DllImport attribute should not be applied to publicly accessible members (public or protected).</Description>
+   <Resolution Name="Default">Change the accessibility of P/Invoke {0} so that it is no longer visible from outside its assembly.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182209.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="50">CriticalError</MessageLevel>
+   <File Name="interoperabilityrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="PointersShouldNotBeVisible" Category="Microsoft.Security" CheckId="CA2111">
+   <Name>Pointers should not be visible</Name>
+   <Description>IntPtr and UIntPtr fields should be declared as private. Exposing non-private pointers can cause a security weakness.</Description>
+   <Resolution Name="Default">Make {0} private.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182306.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">CriticalError</MessageLevel>
+   <File Name="securityrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200">
+   <Name>Rethrow to preserve stack details</Name>
+   <Description>Use the IL rethrow instruction to preserve original stack details when re-raising a caught exception.</Description>
+   <Resolution Name="Default">{0} rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182363.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="SpecifyMarshalingForPInvokeStringArguments" Category="Microsoft.Globalization" CheckId="CA2101">
+   <Name>Specify marshaling for P/Invoke string arguments</Name>
+   <Description>When marshaling strings as ANSI (or as Auto on Win9x), some characters may be changed. If best-fit mapping is on, strings that appear different in Unicode will be marshaled to identical ANSI strings, which may lead to incorrect security decisions. Turning best-fit mapping off reduces this risk, as all characters without equivalents are mapped to '?'. Also, note that CharSet.Ansi is the default setting for all string marshaling; Unicode marshaling must be specified explicitly, either as a CharSet setting of DllImport or StructLayout, or as a MarshalAs attribute with a Unicode (or system-dependent) UnmanagedType.</Description>
+   <Resolution Name="Parameter">To reduce security risk, marshal parameter {0} as Unicode, by setting DllImport.CharSet to CharSet.Unicode, or by explicitly marshaling the parameter as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, set BestFitMapping=false; for added security, also set ThrowOnUnmappableChar=true.</Resolution>
+   <Resolution Name="ParameterImplicitAnsi">To reduce security risk, marshal parameter {0} as Unicode, by setting DllImport.CharSet to CharSet.Unicode, or by explicitly marshaling the parameter as UnmanagedType.LPWStr. If you need to marshal this string as ANSI or system-dependent, specify MarshalAs explicitly, and set BestFitMapping=false; for added security, also set ThrowOnUnmappableChar=true.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182319.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Error</MessageLevel>
+   <File Name="globalizationrules.dll" Version="14.0.0.0" />
+  </Rule>
+  <Rule TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001">
+   <Name>Types that own disposable fields should be disposable</Name>
+   <Description>Types that declare disposable members should also implement IDisposable. If the type does not own any unmanaged resources, do not implement a finalizer on it.</Description>
+   <Resolution Name="DependsOnFix">Implement IDisposable on {0} because it creates members of the following IDisposable types: {1}. If {0} has previously shipped, adding new members that implement IDisposable to this type is considered a breaking change to existing consumers.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182172.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="14.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

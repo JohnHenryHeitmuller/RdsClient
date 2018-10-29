@@ -1,0 +1,56 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="RdsClient.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MainWindow_Size" Description="Remembered size of RDS Client Main Window" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="MainWindow_SelectedTabIndex" Description="Remembered Active Tab in the RDS Client Main Window" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="RDSExplorerTab_ExpandedServers" Description="Remembered exanded/colapsed state of servers on the RDS Explorer tab" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="FavoritesTab_AppList" Description="Remembered Registry Keys of Apps on the user's favorites list" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="FavoritesTab_ExpandedServers" Description="Remembered exanded/colapsed state of servers on Favorite Apps tab" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ExternalTool_RdsAddConnectionCmd" Description="Command line to launch the Control Panel RDS &quot;Access RemoteApp and desktops&quot; wizard" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">RunWizard {7940ACF8-60BA-4213-A7C3-F3B400EE266D}</Value>
+    </Setting>
+    <Setting Name="ExternalTool_RdsManageConnectionsCmd" Description="Command line to launch the Control Panel &quot;RemoteApp and Desktop Connections&quot; applet" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">RunWizard {241D7C96-F8BF-4F85-B01F-E2B043341A4B}</Value>
+    </Setting>
+    <Setting Name="SessionsTab_ExpandedServers" Description="Remembered exanded/colapsed state of servers on the Sessions tab" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="KnownRdsServers" Description="List of &quot;Known&quot; RDS servers to query for user sessions and processes" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;accounting.jrfcorp.net&lt;/string&gt;
+  &lt;string&gt;jrv0-tfs.jrfcorp.net&lt;/string&gt;
+  &lt;string&gt;saunders.jrfcorp.net&lt;/string&gt;
+  &lt;string&gt;misrds.jrfcorp.net&lt;/string&gt;
+  &lt;string&gt;stamper.jrfcorp.net&lt;/string&gt;
+  &lt;string&gt;remote.jrfcorp.net&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="ADDomains" Description="List of Active Directory Domains (';' delimited)" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">jrcc.local</Value>
+    </Setting>
+    <Setting Name="ADAdminGroups" Description="List of Active Directory admin groups. Members of these groups will have access to RDS Client admin features (';' delimited)" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Domain Admins</Value>
+    </Setting>
+    <Setting Name="JumpListItems_Maximum" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="RdsExplorerTab_MaxNameLength" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">30</Value>
+    </Setting>
+    <Setting Name="RdsExplorerState" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

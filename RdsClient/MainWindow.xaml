@@ -1,0 +1,315 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RdsClient"
+        xmlns:Jrfc="clr-namespace:Jrfc;assembly=Jrfc" x:Name="uc_RdsClientMainWindow" x:Class="RdsClient.MainWindow"
+        mc:Ignorable="d"
+        Title="RDS Client" Closing="Window_Closing" MinWidth="320" MinHeight="240" Activated="Window_Activated" Loaded="uc_RdsClientMainWindow_Loaded" >
+
+
+    <Window.Resources>
+        <!--<ContextMenu x:Key="uc_RemoteAppContextMenu" x:Shared="true">
+            <MenuItem Header="Add to Favorites" x:Name="uc_RdsEx_AppMenu_AddToFavorites" Click="uc_RdsEx_AppMenu_AddToFavorites_Click" />
+            <MenuItem Header="Pin to Taskbar" x:Name="uc_RemoteAppContextMenu_PintToTaskbar" Click="uc_RemoteAppContextMenu_PintToTaskbar_Click"/>
+            <MenuItem Header="Pin to Start" x:Name="uc_RemoteAppContextMenu_PinToStart" Click="uc_RemoteAppContextMenu_PintToStart_Click"/>
+            <MenuItem Header="Remove Server" x:Name="uc_RdsEx_AppMenu_RemoveServer" />
+            --><!--
+            <MenuItem Header="Logoff your session" Name="uc_RemoteAppContextMenu_LoggoffSession" Click="uc_RemoteAppContextMenu_LoggoffSession_Click"/>
+            --><!--
+        </ContextMenu>-->
+
+        <ContextMenu x:Key="uc_SessionsContextMenu" x:Shared="true">
+            <MenuItem Header="Logoff Session" Click="uc_SessionsContextMenu_Logoff_Click" />
+            <MenuItem Header="Open Desktop session to server" Click="uc_SessionsContextMenu_OpenDesktopSession_Click"/>
+        </ContextMenu>
+
+    </Window.Resources>
+
+    <Grid >
+        <TabControl x:Name="uc_MainTabControl" Margin="0,24,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+            <!--<TabItem Header="Favorites" Margin="0,0,0,-2" Padding="20,4">
+                <Grid Background="#FFE5E5E5">
+                    <ListView x:Name="uc_FavoriteApps" ContextMenu="{DynamicResource uc_RemoteAppContextMenu}"
+						ContextMenuOpening="uc_RemoteApp_ContextMenuOpening"
+						Margin="0"  ScrollViewer.HorizontalScrollBarVisibility="Disabled" MouseDoubleClick="uc_FavoriteApps_MouseDoubleClick" KeyUp="uc_FavoriteApps_KeyUp">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="0,0,0,0" Width="100" Height="100" >
+                                    <Image Source="{Binding IconFile}" HorizontalAlignment="Center" VerticalAlignment="Top" Height="48" Width="48" Margin="0 0 0 0"/>
+                                    <TextBlock Text="{Binding DisplayName}" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Width="100" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.GroupStyle>
+                            <GroupStyle>
+                                <GroupStyle.ContainerStyle>
+                                    <Style TargetType="{x:Type GroupItem}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate>
+                                                    <Expander x:Name="uc_RdsFav_ServerGroupExpander" Expanded="uc_RdsFav_ServerGroupExpander_Expanded" Collapsed="uc_RdsFav_ServerGroupExpander_Collapsed" Loaded="uc_RdsFav_ServerGroupExpander_Loaded" Margin="0">
+                                                        <Expander.Header>
+                                                            <StackPanel x:Name="uc_RdsFav_ServerGroupStackPanel" Orientation="Horizontal" Margin="0,10" >
+                                                                <TextBlock Text="{Binding Name}" FontWeight="Bold" Foreground="Gray" FontSize="22" VerticalAlignment="Center" />
+                                                                --><!--
+                                                                <TextBlock Text="{Binding ItemCount}" FontSize="22" Foreground="Green" FontWeight="Bold" FontStyle="Italic" Margin="10,0,0,0" VerticalAlignment="Bottom" />
+                                                                <TextBlock Text=" item(s)" FontSize="22" Foreground="Silver" FontStyle="Italic" VerticalAlignment="Bottom" />
+                                                                --><!--
+                                                            </StackPanel>
+                                                        </Expander.Header>
+                                                        <ItemsPresenter />
+                                                    </Expander>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </GroupStyle.ContainerStyle>
+                            </GroupStyle>
+                        </ListView.GroupStyle>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="RDS Explorer" Padding="20,4">
+                <Grid Background="#FFE5E5E5">
+                    <ListView x:Name="uc_RemoteApps" ContextMenu="{DynamicResource uc_RemoteAppContextMenu}"
+						ContextMenuOpening="uc_RemoteApp_ContextMenuOpening" MouseDoubleClick="uc_RdsExplorer_MouseDoubleClick" KeyUp="uc_RdsExplorer_KeyUp">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="Auto">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding IconFile}" Height="20" Width="20" Margin="40 0 0 0"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="App Name" DisplayMemberBinding="{Binding DisplayName}" />
+                                --><!--
+                                <GridViewColumn Header="RegistrySubKeyString" DisplayMemberBinding="{Binding RegistrySubKeyString}" />
+                                <GridViewColumn Header="Shortcut" DisplayMemberBinding="{Binding ShortCutLnkFile}" />
+                                --><!--
+                            </GridView>
+                        </ListView.View>
+                        <ListView.GroupStyle>
+                            <GroupStyle>
+                                <GroupStyle.ContainerStyle>
+                                    <Style TargetType="{x:Type GroupItem}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate>
+                                                    <Expander x:Name="uc_RdsEx_ServerGroupExpander" Expanded="uc_RdsEx_ServerGroupExpander_Expanded" Collapsed="uc_RdsEx_ServerGroupExpander_Collapsed" Loaded="uc_RdsEx_ServerGroupExpander_Loaded">
+                                                        <Expander.Header>
+                                                            <StackPanel x:Name="uc_RdsEx_ServerGroupStackPanel" Orientation="Horizontal" >
+                                                                <TextBlock Text="{Binding Name}" FontWeight="Bold" Foreground="Gray" FontSize="22" VerticalAlignment="Bottom" />
+                                                                --><!--
+                                                                <TextBlock Text="{Binding ItemCount}" FontSize="22" Foreground="Green" FontWeight="Bold" FontStyle="Italic" Margin="10,0,0,0" VerticalAlignment="Bottom" />
+                                                                <TextBlock Text=" item(s)" FontSize="22" Foreground="Silver" FontStyle="Italic" VerticalAlignment="Bottom" />
+                                                                --><!--
+                                                            </StackPanel>
+                                                        </Expander.Header>
+                                                        <ItemsPresenter />
+                                                    </Expander>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </GroupStyle.ContainerStyle>
+                            </GroupStyle>
+                        </ListView.GroupStyle>
+                    </ListView>
+                </Grid>
+            </TabItem>-->
+            <TabItem Header="RDS Explorer" Padding="20,4">
+                <!--
+                <Jrfc:RdsExplorerContainer x:Name="uc_RdsExplorerContainer" />
+                -->
+            </TabItem>
+            <TabItem Header="Sessions" Padding="20,4">
+                <Grid x:Name="uc_SessionsGrid" Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ToolBarPanel DockPanel.Dock="Top" Grid.Row="0" Grid.ColumnSpan="3">
+                        <ToolBar ToolBarTray.IsLocked="True" >
+                            <Menu ToolBar.OverflowMode="Never" BorderThickness="1" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Height="38">
+                                <Button x:Name="uc_UserSessionsRefreshButton" FontSize="13.333" HorizontalAlignment="Center" Height="29" VerticalAlignment="Center" Click="uc_UserSessionsRefreshButton_Click" Padding="5,1">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock FontFamily="Segoe UI Symbol" Text="&#xE149;" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold"/>
+                                        <TextBlock Text="Refresh" Padding="8,2,3,2" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                    </StackPanel>
+                                </Button>
+                            </Menu>
+                        </ToolBar>
+                    </ToolBarPanel>
+                    <ListView x:Name="uc_Sessions" ContextMenu="{DynamicResource uc_SessionsContextMenu}" 
+						ContextMenuOpening="uc_Sessions_ContextMenuOpening"
+						Margin="0,0,0,0" Loaded="uc_Sessions_Loaded" BorderThickness="0" Grid.Row="1" SelectionChanged="uc_Sessions_SelectionChanged">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListViewItem}">
+                                <Setter Property="BorderBrush" Value="LightGray" />
+                                <Setter Property="BorderThickness" Value="0,0,0,0" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.View>
+                            <GridView x:Name="uc_SessionsGridView">
+                                <!-- <GridViewColumn Header="Session ID" DisplayMemberBinding="{Binding SessionId}" Width="Auto"/>  -->
+                                <GridViewColumn Header="Session ID" Width="Auto">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding SessionId}" Margin="50 0 0 0"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Username" DisplayMemberBinding="{Binding Username}" Width="100"/>
+                                <GridViewColumn Header="Connection State" DisplayMemberBinding="{Binding ConnectionState}" Width="125"/>
+                                <GridViewColumn Header="Client Hostname" DisplayMemberBinding="{Binding ClientHostname}" Width="125"/>
+                                <GridViewColumn Header="Client Address" DisplayMemberBinding="{Binding ClientIpAddressAsString}" Width="125"/>
+                                <!--
+                            <GridViewColumn Header="Client Hostname" DisplayMemberBinding="{Binding ClientHostname}" Width="125"/>
+                            <GridViewColumn Header="Client Address" DisplayMemberBinding="{Binding ClientIpAddressAsString}" Width="125"/>
+                            <GridViewColumn Header="WinStation Name" DisplayMemberBinding="{Binding WinStationName}" Width="Auto"/>
+                            -->
+                            </GridView>
+                        </ListView.View>
+                        <ListView.GroupStyle>
+                            <GroupStyle>
+                                <GroupStyle.ContainerStyle>
+                                    <Style TargetType="{x:Type GroupItem}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate>
+                                                    <Expander x:Name="uc_Sessions_ServerGroupExpander" Expanded="uc_Sessions_ServerGroupExpander_Expanded" Collapsed="uc_Sessions_ServerGroupExpander_Collapsed" Loaded="uc_Sessions_ServerGroupExpander_Loaded">
+                                                        <Expander.Header>
+                                                            <StackPanel x:Name="uc_RdsEx_ServerGroupStackPanel" Orientation="Horizontal" >
+                                                                <TextBlock Text="{Binding Name}" FontWeight="Bold" Foreground="Gray" FontSize="22" VerticalAlignment="Bottom" />
+                                                                <TextBlock Text="{Binding ItemCount}" FontSize="22" Foreground="Navy" FontWeight="Bold" Margin="10,0,0,0" VerticalAlignment="Bottom" />
+                                                                <TextBlock Text=" Sessions(s)" FontSize="22" Foreground="Gray" FontStyle="Italic" VerticalAlignment="Bottom" />
+                                                            </StackPanel>
+                                                        </Expander.Header>
+                                                        <ItemsPresenter />
+                                                    </Expander>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </GroupStyle.ContainerStyle>
+                            </GroupStyle>
+                        </ListView.GroupStyle>
+                    </ListView>
+                    <GridSplitter Grid.Row="1" Grid.Column="1" Width="3" HorizontalAlignment="Stretch" Background="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}" />
+                    <ListView x:Name="uc_SessionProcesses" Grid.Column="2" Margin="0" Grid.Row="1" BorderThickness="0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Process ID" Width="Auto">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding ProcessId}" Margin="20,0" HorizontalAlignment="Center"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Process Name" DisplayMemberBinding="{Binding ProcessName}" Width="Auto"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Padding="30,4" Header="Users">
+                <Grid x:Name="uc_UsersGrid" Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ToolBarPanel DockPanel.Dock="Top" Grid.Row="0" Grid.ColumnSpan="3" Height="40">
+                        <ToolBar ToolBarTray.IsLocked="True" >
+                            <Menu ToolBar.OverflowMode="Never" BorderThickness="1" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}">
+                                <Button x:Name="uc_UserfreshButton" Content="Refresh" FontSize="13.333" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Click="uc_UserSessionsRefreshButton_Click" Padding="10,1"/>
+                                <!--
+                                <Label Content="Filter by Protocol" />
+                                <ComboBox x:Name="uc_SessionsFilterProtocol" IsEditable="True" Height="26" MinWidth="150">
+                                    <CheckBox x:Name="uc_SessionsShowRdp" Content="RDP Sessions" Checked="uc_SessionsShowProtocolChanged" Unchecked="uc_SessionsShowProtocolChanged"/>
+                                    <CheckBox x:Name="uc_SessionsShowConsole" Content="Console Sessions" Checked="uc_SessionsShowProtocolChanged" Unchecked="uc_SessionsShowProtocolChanged"/>
+                                    <CheckBox x:Name="uc_SessionsShowService" Content="Service Sessions" Checked="uc_SessionsShowProtocolChanged" Unchecked="uc_SessionsShowProtocolChanged"/>
+                                    <CheckBox x:Name="uc_SessionsShowOtherProtocol" Content="Other Sessions" Checked="uc_SessionsShowProtocolChanged" Unchecked="uc_SessionsShowProtocolChanged"/>
+                                </ComboBox>
+                                <Label Content="Filter by State" />
+                                <ComboBox x:Name="uc_SessionsFilterState" IsEditable="True" Height="26" MinWidth="150">
+                                    <CheckBox x:Name="uc_SessionsShowActive" Content="Active" Checked="uc_SessionsShowStateChanged" Unchecked="uc_SessionsShowStateChanged"/>
+                                    <CheckBox x:Name="uc_SessionsShowDiconnected" Content="Disconnected" Checked="uc_SessionsShowStateChanged" Unchecked="uc_SessionsShowStateChanged"/>
+                                    <CheckBox x:Name="uc_SessionsShowOtherStates" Content="Other States" Checked="uc_SessionsShowStateChanged" Unchecked="uc_SessionsShowStateChanged"/>
+                                </ComboBox>
+                                -->
+                            </Menu>
+                        </ToolBar>
+                    </ToolBarPanel>
+                    <ListView x:Name="uc_Users" ContextMenu="{DynamicResource uc_SessionsContextMenu}" 
+						ContextMenuOpening="uc_Sessions_ContextMenuOpening"
+						Loaded="uc_Users_Loaded" BorderThickness="0" Grid.Row="1" SelectionChanged="uc_Users_SelectionChanged" >
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="{x:Type ListViewItem}">
+                                <Setter Property="BorderBrush" Value="LightGray" />
+                                <Setter Property="BorderThickness" Value="0,0,0,0" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.View>
+                            <GridView x:Name="uc_UsersGridView">
+                                <GridViewColumn Header="Server" DisplayMemberBinding="{Binding Hostname}" Width="200" />
+                                <GridViewColumn Header="Username" DisplayMemberBinding="{Binding Username}" Width="100"/>
+                                <GridViewColumn Header="Connection State" DisplayMemberBinding="{Binding ConnectionState}" Width="125"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <GridSplitter Grid.Row="1" Grid.Column="1" Width="3" HorizontalAlignment="Stretch" Background="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}" />
+                    <ListView x:Name="uc_UserProcesses" Grid.Column="2" Margin="0" Grid.Row="1" BorderThickness="0">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Process ID" Width="Auto">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding ProcessId}" Margin="20,0" HorizontalAlignment="Center"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Process Name" DisplayMemberBinding="{Binding ProcessName}" Width="Auto"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Menu x:Name="menu" Height="23" Margin="0" VerticalAlignment="Top">
+            <MenuItem Header="File">
+                <MenuItem x:Name="uc_MenuItem_SaveAppState" Header="Save RDS Client State" Click="uc_MenuItem_SaveAppState_Click"/>
+                <MenuItem Header="Exit without Saving RDS Client State" Click="uc_MenuItem_ExitWithoutSaving_Click" />
+                <MenuItem Header="Exit" Click="uc_MenuItem_exit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Tools">
+                <MenuItem x:Name="uc_MenuItem_ManageRemoteApps" Header="Manage RemoteApp and Desktop Connections..." Click="uc_MenuItem_ManageRemoteApps_Click"/>
+                <MenuItem x:Name="uc_MenuItem_AddRemoteAppConnection" Header="Add RemoteApp and Desktops..." Click="uc_MenuItem_AddRemoteAppConnection_Click"/>
+                <MenuItem x:Name="uc_MenuItem_ClearUserRdsConnections" Header="Clear all of your RDS connections..." Click="uc_MenuItem_ClearUserRdsConnections_Click"/>
+                <MenuItem Header="Diagnostic and System Info..." Click="uc_MenuItem_DiagnoticAndSystemInfo_Click"/>
+                <MenuItem x:Name="uc_MenuItem_Preferences" Header="Preferences..." Click="uc_MenuItem_Preferences_Click"/>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="Help" Click="uc_MenuItem_Help_Click" />
+                <MenuItem Header="About" Click="uc_MenuItem_About_Click" />
+            </MenuItem>
+        </Menu>
+    </Grid>
+</Window>

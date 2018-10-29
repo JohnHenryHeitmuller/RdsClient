@@ -1,0 +1,15 @@
+﻿<Window x:Class="RdsClient.PreferencesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RdsClient"
+        mc:Ignorable="d"
+        xmlns:swf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        Title="RDS Client Preferences" Height=" 480" Width="640" Loaded="Window_Loaded">
+    <Grid>
+        <WindowsFormsHost>
+            <swf:PropertyGrid x:Name="uc_PropertyGrid" Dock="Fill" LargeButtons="True" />
+        </WindowsFormsHost>
+    </Grid>
+</Window>

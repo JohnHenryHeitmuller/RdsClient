@@ -1,0 +1,46 @@
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\bin\Debug\PinTo10\PinTo10.exe
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\bin\Debug\RdsClient.exe.config
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\bin\Debug\RdsClient.exe
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\bin\Debug\RdsClient.pdb
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\bin\Debug\Jrfc.dll
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\bin\Debug\Microsoft.WindowsAPICodePack.dll
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\bin\Debug\Jrfc.pdb
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Debug\RdsClient.csprojResolveAssemblyReference.cache
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Debug\AboutWindow.g.cs
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Debug\MainWindow.g.cs
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Debug\PreferencesWindow.g.cs
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Debug\App.g.cs
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Debug\RdsClient_MarkupCompile.cache
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Debug\RdsClient_MarkupCompile.lref
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Debug\AboutWindow.baml
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Debug\MainWindow.baml
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Debug\PreferencesWindow.baml
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Debug\RdsClient.g.resources
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Debug\RdsClient.Properties.Resources.resources
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Debug\RdsClient.csproj.GenerateResource.Cache
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Debug\RdsClient.exe
+D:\Users\John\OneDrive\Dev\Projects\RdsClient\RdsClient\obj\Debug\RdsClient.pdb
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Debug\PinTo10\PinTo10.exe
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Debug\RdsClient.exe.config
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Debug\RdsClient.exe
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Debug\RdsClient.pdb
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Debug\Jrfc.dll
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\bin\Debug\Jrfc.pdb
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Debug\RdsClient.csprojResolveAssemblyReference.cache
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Debug\AboutWindow.g.cs
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Debug\MainWindow.g.cs
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Debug\PreferencesWindow.g.cs
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Debug\App.g.cs
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Debug\RdsClient_MarkupCompile.cache
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Debug\RdsClient_MarkupCompile.lref
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Debug\AboutWindow.baml
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Debug\MainWindow.baml
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Debug\PreferencesWindow.baml
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Debug\RdsClient.g.resources
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Debug\RdsClient.Properties.Resources.resources
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Debug\RdsClient.csproj.GenerateResource.Cache
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Debug\RdsClient.exe
+C:\Users\john\Dropbox (JRCC)\Dev\Projects\RdsClient\RdsClient\obj\Debug\RdsClient.pdb
